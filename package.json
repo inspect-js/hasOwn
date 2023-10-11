@@ -1,32 +1,35 @@
 {
-  "name": "hasown",
-  "version": "1.0.1",
-  "description": "JavaScript curried hasOwn helper",
-  "main": "index.js",
-  "scripts": {
-    "test": "make test",
-    "test-w": "make test-w",
-    "test-debug": "mocha --debug-brk"
-  },
-  "devDependencies": {
-    "mocha": "~1.21.0",
-    "should": "~4.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/radubrehar/hasown.git"
-  },
-  "keywords": [
-    "own",
-    "property",
-    "hasOwn",
-    "properties",
-    "object",
-    "key"
-  ],
-  "author": "Radu Brehar",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/radubrehar/has-own/issues"
-  }
+	"name": "hasown",
+	"version": "1.0.1",
+	"description": "A robust, ES3 compatible, \"has own property\" predicate.",
+	"main": "index.js",
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inspect-js/hasOwn.git"
+	},
+	"keywords": [
+		"has",
+		"hasOwnProperty",
+		"hasOwn",
+		"has-own",
+		"own",
+		"has",
+		"property",
+		"in",
+		"javascript",
+		"ecmascript"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/hasOwn/issues"
+	},
+	"homepage": "https://github.com/inspect-js/hasOwn#readme"
 }
