@@ -1,38 +1,8 @@
-'use strict'
+'use strict';
 
-var hasOwn = Object.prototype.hasOwnProperty
+var call = Function.prototype.call;
+var $hasOwn = Object.prototype.hasOwnProperty;
+var bind = require('function-bind');
 
-function curry(fn, n){
-
-    if (typeof n !== 'number'){
-        n = fn.length
-    }
-
-    function getCurryClosure(prevArgs){
-
-        function curryClosure() {
-
-            var len  = arguments.length
-            var args = [].concat(prevArgs)
-
-            if (len){
-                args.push.apply(args, arguments)
-            }
-
-            if (args.length < n){
-                return getCurryClosure(args)
-            }
-
-            return fn.apply(this, args)
-        }
-
-        return curryClosure
-    }
-
-    return getCurryClosure([])
-}
-
-
-module.exports = curry(function(object, property){
-    return hasOwn.call(object, property)
-})
+/** @type {(o: {}, p: PropertyKey) => p is keyof o} */
+module.exports = bind.call(call, $hasOwn);

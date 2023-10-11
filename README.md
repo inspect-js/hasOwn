@@ -1,55 +1,40 @@
-hasown
-=======
+# hasown <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-JavaScript curried hasOwn helper.
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
-## Install
+[![npm badge][npm-badge-png]][package-url]
 
-```sh
-$ npm install hasown
-```
+A robust, ES3 compatible, "has own property" predicate.
 
-## Usage
-
-#### Simple usage
+## Example
 
 ```js
-var hasOwn = require('hasown')
-var person = { name: 'bob' }
+const assert = require('assert');
+const hasOwn = require('hasown');
 
-hasOwn(person, 'name') == true
+assert.equal(hasOwn({}, 'toString'), false);
+assert.equal(hasOwn([], 'length'), true);
+assert.equal(hasOwn({ a: 42 }, 'a'), true);
 ```
 
-#### Curried usage
+## Tests
+Simply clone the repo, `npm install`, and run `npm test`
 
-```js
-var hasOwn = require('hasown')
-var person = { lastName: 'willson' }
-var child = Object.create(person)
-child.age = 1
-child.firstName = 'bob'
-
-var childHasOwn = hasOwn(child)
-
-for (var k in child) if (childHasOwn(k)){
-    console.log(k, ' = ', child[k])
-}
-```
-
-## Test
-
-```sh
-$ make
-```
-
-Watch mode
-
-```sh
-$ make test-w
-```
-
-## License
-
-```
-MIT
-```
+[package-url]: https://npmjs.org/package/hasown
+[npm-version-svg]: https://versionbadg.es/inspect-js/hasown.svg
+[deps-svg]: https://david-dm.org/inspect-js/hasOwn.svg
+[deps-url]: https://david-dm.org/inspect-js/hasOwn
+[dev-deps-svg]: https://david-dm.org/inspect-js/hasOwn/dev-status.svg
+[dev-deps-url]: https://david-dm.org/inspect-js/hasOwn#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/hasown.png?downloads=true&stars=true
+[license-image]: https://img.shields.io/npm/l/hasown.svg
+[license-url]: LICENSE
+[downloads-image]: https://img.shields.io/npm/dm/hasown.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=hasown
+[codecov-image]: https://codecov.io/gh/inspect-js/hasOwn/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/inspect-js/hasOwn/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/inspect-js/hasOwn
+[actions-url]: https://github.com/inspect-js/hasOwn/actions

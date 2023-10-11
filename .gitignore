@@ -133,3 +133,8 @@ dist
 npm-shrinkwrap.json
 package-lock.json
 yarn.lock
+
+.npmignore
+
+*.d.ts
+*.d.ts.map
