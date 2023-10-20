@@ -1,6 +1,6 @@
 {
 	"name": "hasown",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"description": "A robust, ES3 compatible, \"has own property\" predicate.",
 	"main": "index.js",
 	"exports": {
