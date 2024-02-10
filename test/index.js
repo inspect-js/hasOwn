@@ -38,8 +38,7 @@ test('hasOwn', function (t) {
 		var arrL = hasOwn([], 'length');
 		var strL = hasOwn('', 'length');
 
-		// TODO: remove this line once node is fixed
-		restore();
+		restore(); // TODO: remove this line once node is fixed
 
 		st.equal(toS, true, 'no call; toString as an own property is an own property');
 		st.equal(ownA, true, 'no call; a normal own property is an own property');
