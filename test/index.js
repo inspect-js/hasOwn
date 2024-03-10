@@ -8,6 +8,23 @@ var hasOwn = require('../');
 test('hasOwn', function (t) {
 	t.equal(typeof hasOwn, 'function', 'is a function');
 
+	t['throws'](
+		// @ts-expect-error
+		function () { hasOwn(); },
+		TypeError,
+		'no arguments, throws'
+	);
+	t['throws'](
+		function () { hasOwn(undefined, ''); },
+		TypeError,
+		'undefined throws'
+	);
+	t['throws'](
+		function () { hasOwn(null, ''); },
+		TypeError,
+		'null throws'
+	);
+
 	t.equal(
 		hasOwn({}, 'toString'),
 		false,
